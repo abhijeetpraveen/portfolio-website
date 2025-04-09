@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply bg-white-100 text-primary dark:bg-primary dark:text-white-100;
+  }
+}
+
+@layer components {
+  .max-container {
+    @apply max-w-7xl mx-auto px-6 sm:px-16;
+  }
+
+  .padding {
+    @apply sm:px-16 px-6 sm:py-16 py-10;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
