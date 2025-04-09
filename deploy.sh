@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Function to check if the last command succeeded
+check_status() {
+    if [ $? -ne 0 ]; then
+        echo "Error: $1 failed"
+        exit 1
+    fi
+}
+
 # Initialize variables
 commit_message=""
 files=()
@@ -38,6 +46,7 @@ if [ ${#files[@]} -eq 0 ]; then
     # If no files specified, add all changes
     echo "Adding all changes..."
     git add .
+    check_status "git add"
 else
     # Add specified files
     echo "Adding the following files:"
@@ -45,16 +54,20 @@ else
         echo "- $file"
     done
     git add "${files[@]}"
+    check_status "git add"
 fi
 
 echo "Committing changes with message: $commit_message"
 git commit -m "$commit_message"
+check_status "git commit"
 
 echo "Pushing to main branch..."
 git push origin main
+check_status "git push"
 
-# Vercel deployment
+# Only proceed with Vercel deployment if all git operations succeeded
 echo "Deploying to Vercel..."
 vercel --prod
+check_status "vercel deployment"
 
 echo "Deployment process completed!" 
