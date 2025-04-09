@@ -39,5 +39,34 @@ The platform processes live data from multiple soccer leagues, implementing comp
     image: '/images/mfsl.png',
     technologies: ['Java', 'Springboot', 'AWS', 'Docker', 'mySQL', 'React', 'TypeScript', 'JIRA', 'Confluence'],
     github: 'https://github.com/mfsl-capstone',
+  },
+  {
+    id: 'gympose',
+    title: 'Gympose',
+    description: "Have you ever struggled finding the name of your favorite exercise? Don't worry, GYMPOSE's ingenious AI provides you with all the information you need after you record a quick video of your exercise.",
+    detailedDescription: `Due to the great detrimental effects imposed on individuals as a result of the Covid-19 pandemic, fitness has become increasingly popular as it provides an effective way to repair and heal the physical and mental health burdens caused by the lockdowns, isolation, and fear. However, learning new exercises that target different muscle groups of the body could be a daunting and time-consuming task, subjecting many beginners to a barrier of entry. As a result, I was part of a dedicated team that created Gympose in order to facilitate one's fitness journey by making it less intimidating.
+    
+    Gympose is an AI web application that is able to classify an exercise based on video recordings. Using this platform, individuals can record themselves, or others, doing a specific exercise and in a matter of seconds, the application will provide them with the name, pros and cons, alternatives, and tutorials for that particular exercise. Instead of spending hours browsing the internet to research exercises, by simply recording the exercise you wish to learn about, GYMPOSE will efficiently bring forth all the necessary information to your disposal.`,
+    image: '/images/gympose.png',
+    technologies: ['Python', 'OpenCV', 'Flask', 'React', 'CNN', 'LSTM'],
+    github: 'https://github.com/abhijeetpraveen/GymPose_CHAP',
+  },
+  {
+    id: 'pictodocreader',
+    title: 'Pictodoc Reader',
+    description: 'A web application that allows users to Ctrl+F for an image in a PDF file.',
+    detailedDescription: `Due to covid, many students have become accustomed to working on their schoolwork, projects and even hackathons remotely. This led students to use online resources at their disposal in order to facilitate their workload at home. One of the tools most used is “ctrl+f” which enables a user to quickly locate any text within a document. Thus, a few of my friends and I came to a realisation that no such accurate method exists for images. This led to the birth of this project titled “PictoDocReader”.`,
+    image: '/images/pictodocreader.png',
+    technologies: ['Python', 'Dash', 'Google Cloud', 'PIL', 'Matplotlib', 'NumPy'],
+    github: 'https://github.com/mattcab2002/PictoDocReader',
+  },
+  {
+    id: 'online-grocery-store',
+    title: 'Online Grocery Store',
+    description: 'Project implementing an online grocery store website and android application in a team of 6.',
+    detailedDescription: `This is an online Grocery Store Software System using the Agile methodology. This Software System allows customers to create an account which they can use to buy products from their favourite grocery store. Customers can buy products from the ease of their home by having it delivered to their address. However, an option for them to pick up their groceries from an in-store location is also available if they wish to do so. The system will be mainly managed by the owner. They can hire and fire employees from this system, while also allowing him to manage his employee's schedules. They can also decide the business hours of the store as well as occasions of holidays.`,
+    image: '/images/321.png',
+    technologies: ['Java', 'Vue.js', 'JavaScript', 'REST API', 'PostgreSQL'],
+    github: 'https://github.com/McGill-ECSE321-Winter2022/project-group-group-03',
   }
 ]; 
