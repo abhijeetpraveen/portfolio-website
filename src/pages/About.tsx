@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaFilm, FaTv, FaFutbol, FaCoffee } from 'react-icons/fa';
+import { FaFilm, FaFutbol, FaCoffee } from 'react-icons/fa';
 
 const About = () => {
   return (
