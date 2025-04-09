@@ -24,7 +24,7 @@ export const projects: Project[] = [
     id: 'llm-reasoning-decomp',
     title: 'Training LLM Reasoning Sub-Skills with Synthetic Data',
     description: 'Investigating the use of synthetic data to train LLMs for better reasoning.',
-    detailedDescription: `Placeholder`,
+    detailedDescription: `This work investigates the potential of fine-tuning large language models (LLMs) using programmatically generated synthetic data to enhance their reasoning sub-skills. The study focuses on search as a foundational reasoning sub-skill and evaluates its transferability to higher-order reasoning tasks, specifically Sudoku and Zebra puzzles. Using Low-Rank Adaptation (LoRA), we fine-tune LLMs on synthetic search trajectories without increasing inference-time computational costs, addressing the challenge of high-quality reasoning data scarcity. Our experiments employ Partial Accuracy and Strict Accuracy metrics to assess the effectiveness of fine-tuning and highlight task-specific performance variations. Results demonstrate that fine-tuning on synthetic search trajectories offers marginal improvements in zero shot Zebra puzzle performance compared to the base model. Synthetically fine-tuned models don't offer any improvements when tested on Sudoku. As expected, models fine-tuned directly on task-specific datasets consistently outperform search-fine-tuned models, emphasizing the value of task-specific data. This study underscored the difficulty in improving model attributes which generalize across tasks,`,
     image: '/images/DecompPoster.webp',
     technologies: ['Python', 'PyTorch', 'Hugging Face Transformers'],
     github: 'https://github.com/Cormac-C/llm-reasoning-decomp',
