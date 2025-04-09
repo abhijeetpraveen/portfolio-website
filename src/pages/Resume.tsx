@@ -100,7 +100,7 @@ const education: Education[] = [
     description: 'Multimodal Learning Research at the iSmart lab under the supervision of Professor Narges Armanfard. GPA: 4.0/4.0'
   },
   {
-    degree: 'Bachelor of Engineering Computer Engineering',
+    degree: 'Bachelor of Engineering - Computer Engineering',
     institution: 'McGill University',
     institutionLink: 'https://www.mcgill.ca/',
     period: '2020 - 2024',

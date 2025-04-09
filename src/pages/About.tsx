@@ -35,7 +35,7 @@ const About = () => {
                 className="p-6 bg-primary/5 dark:bg-white-100/5 rounded-lg"
               >
                 <h4 className="text-xl font-semibold text-primary dark:text-white-100 mb-2">
-                  Multimodal Learning
+                  AI Research
                 </h4>
                 <p className="text-secondary">
                   Conducting research in multimodal learning, with a focus on understanding and improving the capabilities of LLMs.
@@ -50,7 +50,7 @@ const About = () => {
                   Software Projects
                 </h4>
                 <p className="text-secondary">
-                  Developing software projects to solve problems I and others face in our daily lives.
+                  DDeveloping software projects to solve everyday problems faced by myself and others.
                 </p>
               </motion.div>
             </div>
