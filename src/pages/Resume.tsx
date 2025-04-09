@@ -123,9 +123,9 @@ const Resume = () => {
             Resume
           </h2>
           <a
-            href="/src/assets/Abhijeet Praveen's Resume.pdf"
+            href="/docs/Abhijeet_Praveen_Resume.pdf"
             download="Abhijeet_Praveen_Resume.pdf"
-            className="flex items-center gap-2 px-4 py-2 bg-primary dark:bg-white-100 text-white-100 dark:text-primary rounded-lg hover:bg-secondary dark:hover:bg-secondary transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white-100 rounded-lg hover:bg-secondary/90 transition-colors"
           >
             <FaDownload />
             <span>Download CV</span>
