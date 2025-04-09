@@ -36,7 +36,7 @@ const experiences: Experience[] = [
   {
     title: 'Machine Learning Developer & Founding Member',
     company: 'ARVO A.I.',
-    homepage: 'https://www.arvokas.io/',
+    homepage: 'https://www.arvoai.ca/',
     period: 'June 2023 - July 2024',
     location: 'Montreal, QC, Canada',
     description: [
