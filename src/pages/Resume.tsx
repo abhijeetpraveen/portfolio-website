@@ -1,17 +1,22 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaDownload } from 'react-icons/fa';
 
 interface Experience {
   title: string;
   company: string;
+  homepage: string;
   period: string;
-  description: string[];
+  location: string;
+  description: React.ReactNode[];
 }
 
 interface Education {
   degree: string;
   institution: string;
+  institutionLink: string;
   period: string;
+  location: string;
   description: string;
 }
 
@@ -19,7 +24,9 @@ const experiences: Experience[] = [
   {
     title: 'Graduate Student Researcher',
     company: 'iSmart Lab at MILA - Quebec AI Institute & McGill University',
+    homepage: 'https://ismart.ece.mcgill.ca/',
     period: 'August 2024 - Present',
+    location: 'Montreal, QC, Canada',
     description: [
       'Conducting advanced multimodal learning research focusing on early, late, and intermediate fusion techniques across audio, video, text, and tabular data.',
       'Utilizing large language models, convolutional neural networks and reinforcement learning to drive innovations in healthcare, industrial automation, and computer vision applications.',
@@ -29,7 +36,9 @@ const experiences: Experience[] = [
   {
     title: 'Machine Learning Developer & Founding Member',
     company: 'ARVO A.I.',
+    homepage: 'https://www.arvokas.io/',
     period: 'June 2023 - July 2024',
+    location: 'Montreal, QC, Canada',
     description: [
       'Helped initiate and spearheaded a diverse team comprising of 10 R&D developers and 10 software developers.',
       'Developed the R&D team\'s research structure, completed project assignments within tight deadlines.',
@@ -40,7 +49,9 @@ const experiences: Experience[] = [
   {
     title: 'Software Developer Intern',
     company: 'Hivestack Inc.',
+    homepage: 'https://www.hivestack.com/',
     period: 'May 2023 - August 2023',
+    location: 'Montreal, QC, Canada',
     description: [
       'Collaborated with a dynamic software team, gaining hands-on experience in developing and maintaining applications.',
       'Leveraged a comprehensive skill set encompassing both front-end and back-end technologies.',
@@ -60,7 +71,9 @@ const experiences: Experience[] = [
   {
     title: 'Business Intelligence Development Intern',
     company: 'Western Alliance Logistics',
+    homepage: 'https://westernalliancelogistics.com/',
     period: 'May 2022 - May 2023',
+    location: 'Kirkland, QC, Canada',
     description: [
       'Contributed to projects implementing an automation of day-to-day business activities.',
       'Used RPA (Robotic Process Automation) technologies to decrease time taken in completing tasks by transforming them into a fully automated program.',
@@ -81,13 +94,17 @@ const education: Education[] = [
   {
     degree: 'MSc. in Electrical & Computer Engineering - Artificial Intelligence',
     institution: 'McGill University & MILA - Quebec AI Institute',
+    institutionLink: 'https://mila.quebec/en/',
     period: '2024 - Present',
+    location: 'Montreal, QC, Canada',
     description: 'Multimodal Learning Research at the iSmart lab under the supervision of Professor Narges Armanfard. GPA: 4.0/4.0'
   },
   {
     degree: 'Bachelor of Engineering Computer Engineering',
     institution: 'McGill University',
+    institutionLink: 'https://www.mcgill.ca/',
     period: '2020 - 2024',
+    location: 'Montreal, QC, Canada',
     description: 'Minor: Applied Artificial Intelligence. GPA: 3.8/4.0'
   }
 ];
@@ -134,9 +151,16 @@ const Resume = () => {
                       <h4 className="text-xl font-bold text-primary dark:text-white-100">
                         {edu.degree}
                       </h4>
-                      <p className="text-secondary">{edu.institution}</p>
+                      <p className="text-secondary">
+                        <a href={edu.institutionLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary dark:hover:text-white-100 transition-colors">
+                          {edu.institution}
+                        </a>
+                      </p>
                     </div>
-                    <span className="text-secondary">{edu.period}</span>
+                    <div className="text-right">
+                      <span className="text-secondary block">{edu.period}</span>
+                      <span className="text-secondary text-sm">{edu.location}</span>
+                    </div>
                   </div>
                   <p className="text-primary dark:text-white-100">{edu.description}</p>
                 </motion.div>
@@ -162,9 +186,16 @@ const Resume = () => {
                       <h4 className="text-xl font-bold text-primary dark:text-white-100">
                         {exp.title}
                       </h4>
-                      <p className="text-secondary">{exp.company}</p>
+                      <p className="text-secondary">
+                        <a href={exp.homepage} target="_blank" rel="noopener noreferrer" className="hover:text-primary dark:hover:text-white-100 transition-colors">
+                          {exp.company}
+                        </a>
+                      </p>
                     </div>
-                    <span className="text-secondary">{exp.period}</span>
+                    <div className="text-right">
+                      <span className="text-secondary block">{exp.period}</span>
+                      <span className="text-secondary text-sm">{exp.location}</span>
+                    </div>
                   </div>
                   <ul className="list-none space-y-2 text-primary dark:text-white-100">
                     {exp.description.map((item, i) => (
