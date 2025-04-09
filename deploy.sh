@@ -34,7 +34,6 @@ if [ -z "$commit_message" ]; then
 fi
 
 # Git operations
-echo "Adding files to git..."
 if [ ${#files[@]} -eq 0 ]; then
     # If no files specified, add all changes
     echo "Adding all changes..."
