@@ -1,100 +1,87 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { projects } from '../data/projects';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
-interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  githubLink: string;
-  liveLink?: string;
-  image: string;
-}
-
-const projects: Project[] = [
-  {
-    title: 'Project 1',
-    description: 'A brief description of your first project and what it does.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    githubLink: 'https://github.com/yourusername/project1',
-    liveLink: 'https://project1.com',
-    image: '/src/assets/project1.png',
-  },
-  {
-    title: 'Project 2',
-    description: 'A brief description of your second project and what it does.',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    githubLink: 'https://github.com/yourusername/project2',
-    liveLink: 'https://project2.com',
-    image: '/src/assets/project2.png',
-  },
-  // Add more projects as needed
-];
-
 const Projects = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="padding min-h-screen pt-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
+        className="max-w-4xl mx-auto"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-white-100 mb-8">
-          My Projects
+        <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-white-100 mb-16">
+          Projects
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white-100 dark:bg-primary rounded-lg overflow-hidden shadow-lg"
+              className="bg-white-100 dark:bg-primary p-6 rounded-lg shadow-lg"
             >
-              <div className="relative h-48">
+              <div 
+                className="relative group cursor-pointer"
+                onClick={() => navigate(`/projects/${project.id}`)}
+              >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-48 object-cover rounded-lg shadow-lg group-hover:opacity-90 transition-opacity"
                 />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-primary dark:text-white-100 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-secondary mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-primary/10 dark:bg-white-100/10 text-primary dark:text-white-100 rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                  <h3 className="text-white-100 text-xl font-semibold">{project.title}</h3>
                 </div>
-                <div className="flex gap-4">
+              </div>
+              <div className="relative group">
+                <p className="text-primary dark:text-white-100 mt-4 line-clamp-2 group-hover:line-clamp-none transition-all">
+                  {project.description}
+                </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-white-100 dark:from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              </div>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.technologies?.slice(0, 3).map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+                {project.technologies?.length > 3 && (
+                  <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">
+                    +{project.technologies.length - 3}
+                  </span>
+                )}
+              </div>
+              <div className="flex gap-4 mt-4">
+                {project.github && (
                   <a
-                    href={project.githubLink}
+                    href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary dark:text-white-100 hover:text-secondary dark:hover:text-secondary transition-colors"
+                    className="text-primary dark:text-white-100 hover:text-secondary dark:hover:text-secondary transition-colors"
                   >
-                    <FaGithub />
-                    <span>GitHub</span>
+                    <FaGithub size={24} />
                   </a>
-                  {project.liveLink && (
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-primary dark:text-white-100 hover:text-secondary dark:hover:text-secondary transition-colors"
-                    >
-                      <FaExternalLinkAlt />
-                      <span>Live Demo</span>
-                    </a>
-                  )}
-                </div>
+                )}
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary dark:text-white-100 hover:text-secondary dark:hover:text-secondary transition-colors"
+                  >
+                    <FaExternalLinkAlt size={24} />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
