@@ -71,6 +71,7 @@ const About = () => {
                 <ul className="list-disc list-inside space-y-1 ml-4">
                   <li>Good Will Hunting</li>
                   <li>The Dark Knight</li>
+                  <li>Peaky Blinders</li>
                   <li>Breaking Bad</li>
                   <li>Mad Men</li>
                   <li>Brooklyn Nine-Nine</li>
