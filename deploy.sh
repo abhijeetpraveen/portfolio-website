@@ -17,9 +17,14 @@ shift
 echo "Adding files to git..."
 if [ $# -eq 0 ]; then
     # If no files specified, add all changes
+    echo "Adding all changes..."
     git add .
 else
     # Add specified files
+    echo "Adding the following files:"
+    for file in "$@"; do
+        echo "- $file"
+    done
     git add "$@"
 fi
 
