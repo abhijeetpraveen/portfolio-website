@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { FaFilm, FaTv, FaFutbol, FaCoffee } from 'react-icons/fa';
 
 const About = () => {
   return (
@@ -13,51 +14,89 @@ const About = () => {
           About Me
         </h2>
         
-        <div className="space-y-6 text-primary dark:text-white-100">
-          <p>
-            Hello! I'm a passionate developer with a strong interest in creating beautiful and functional web applications.
-            I specialize in frontend development and have experience working with modern technologies and frameworks.
-          </p>
-          
-          <p>
-            My journey in web development started [your story here]. Since then, I've been constantly learning and
-            improving my skills to create better user experiences and solve complex problems.
-          </p>
-          
-          <p>
-            When I'm not coding, you can find me [your hobbies/interests]. I believe in continuous learning and
-            staying up-to-date with the latest technologies and best practices in web development.
-          </p>
-        </div>
-
-        <div className="mt-12">
-          <h3 className="text-2xl font-bold text-primary dark:text-white-100 mb-6">
-            What I Do
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="p-6 bg-primary/5 dark:bg-white-100/5 rounded-lg"
-            >
-              <h4 className="text-xl font-semibold text-primary dark:text-white-100 mb-2">
-                Frontend Development
-              </h4>
-              <p className="text-secondary">
-                Creating responsive and interactive user interfaces using modern frameworks and libraries.
-              </p>
-            </motion.div>
+        <div className="space-y-8 text-primary dark:text-white-100">
+          <div className="space-y-4">
+            <p className="text-lg">
+              Hello! I'm currently an MS student in the iSmart Lab at MILA - Quebec AI Institute & McGill University under the supervision of Professor Narges Armanfard.
+            </p>
             
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="p-6 bg-primary/5 dark:bg-white-100/5 rounded-lg"
-            >
-              <h4 className="text-xl font-semibold text-primary dark:text-white-100 mb-2">
-                UI/UX Design
-              </h4>
-              <p className="text-secondary">
-                Designing intuitive and user-friendly interfaces with a focus on accessibility and performance.
-              </p>
-            </motion.div>
+            <p className="text-lg">
+              I completed my undergrad in Computer Engineering and Applied Artificial Intelligence from McGill University in 2024.
+            </p>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-2xl font-bold text-primary dark:text-white-100 mb-8">
+              What I Do
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="p-6 bg-primary/5 dark:bg-white-100/5 rounded-lg"
+              >
+                <h4 className="text-xl font-semibold text-primary dark:text-white-100 mb-2">
+                  Multimodal Learning
+                </h4>
+                <p className="text-secondary">
+                  Conducting research in multimodal learning, with a focus on understanding and improving the capabilities of LLMs.
+                </p>
+              </motion.div>
+              
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="p-6 bg-primary/5 dark:bg-white-100/5 rounded-lg"
+              >
+                <h4 className="text-xl font-semibold text-primary dark:text-white-100 mb-2">
+                  Software Projects
+                </h4>
+                <p className="text-secondary">
+                  Developing software projects to solve problems I and others face in our daily lives.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-2xl font-bold text-primary dark:text-white-100 mb-8">
+              Beyond Work
+            </h3>
+            
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2 text-lg font-medium">
+                  <FaFilm className="text-secondary" />
+                  <h3>Movies & TV Shows</h3>
+                </div>
+                <p className="text-lg mb-2">When I'm not coding, you can find me watching movies and tv shows. Some of my favourites include:</p>
+                <ul className="list-disc list-inside space-y-1 ml-4">
+                  <li>Good Will Hunting</li>
+                  <li>The Dark Knight</li>
+                  <li>Breaking Bad</li>
+                  <li>Mad Men</li>
+                  <li>Brooklyn Nine-Nine</li>
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-2 text-lg font-medium">
+                  <FaFutbol className="text-secondary" />
+                  <h3>Football</h3>
+                </div>
+                <p className="text-lg">
+                  I also passionately support the world's best soccer team - Liverpool FC. YNWA!
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-2 text-lg font-medium">
+                  <FaCoffee className="text-secondary" />
+                  <h3>Let's Connect</h3>
+                </div>
+                <p className="text-lg">
+                  I am always up for a good chat with a cup of coffee! If you'd like to get in touch or collaborate, please don't hesitate to reach out.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </motion.div>
