@@ -1,3 +1,4 @@
+// wont be used for now
 import { motion } from 'framer-motion';
 
 interface Skill {

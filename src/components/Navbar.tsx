@@ -14,7 +14,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Skills', path: '/skills' },
+    // { name: 'Skills', path: '/skills' }, wont be used for now
     { name: 'Resume', path: '/resume' },
     { name: 'Contact', path: '/contact' },
   ];
