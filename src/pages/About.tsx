@@ -50,7 +50,7 @@ const About = () => {
                   Software Projects
                 </h4>
                 <p className="text-secondary">
-                  DDeveloping software projects to solve everyday problems faced by myself and others.
+                  Developing software projects to solve everyday problems faced by myself and others.
                 </p>
               </motion.div>
             </div>
