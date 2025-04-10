@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { projects } from '../data/projects';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaGithub } from 'react-icons/fa';
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -47,71 +48,44 @@ const ProjectDetails = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="space-y-6">
-            <div className="relative group">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <p className="text-primary dark:text-white-100 whitespace-pre-line">
-                {project.detailedDescription}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+        <div className="space-y-8">
+          <div className="relative group">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
           </div>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold text-primary dark:text-white-100 mb-2">Description</h3>
-              <p className="text-primary dark:text-white-100">{project.description}</p>
-            </div>
-            
-            {project.features && (
-              <div>
-                <h3 className="text-xl font-semibold text-primary dark:text-white-100 mb-2">Key Features</h3>
-                <ul className="list-disc list-inside space-y-2 text-primary dark:text-white-100">
-                  {project.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
 
-            <div className="flex gap-4">
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-primary dark:bg-white-100 text-white-100 dark:text-primary rounded-lg hover:bg-secondary dark:hover:bg-secondary transition-colors"
-                >
-                  View on GitHub
-                </a>
-              )}
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-secondary text-white-100 rounded-lg hover:bg-secondary/80 transition-colors"
-                >
-                  Live Demo
-                </a>
-              )}
+          {project.github && (
+            <div className="flex">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary dark:bg-white-100 text-white-100 dark:text-primary rounded-lg hover:bg-secondary dark:hover:bg-secondary transition-colors flex items-center gap-2"
+              >
+                <span>View on</span>
+                <FaGithub size={20} />
+              </a>
             </div>
+          )}
+
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <p className="text-primary dark:text-white-100 whitespace-pre-line text-lg">
+              {project.detailedDescription}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {project.technologies.map((tech, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
       </motion.div>
