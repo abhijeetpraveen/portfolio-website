@@ -1,9 +1,12 @@
+import React from 'react';
+
 export interface Project {
   id: string;
   title: string;
   description: string;
-  detailedDescription: string;
+  detailedDescription: React.ReactNode;
   image: string;
+  lightImage?: string;
   technologies: string[];
   features?: string[];
   github?: string;
@@ -11,6 +14,31 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 'grpo-proj-comp-579',
+    title: 'GRPO Project',
+    description: 'Implementation of Group Relative Policy Optimization (GRPO) on The Countdown Reasoning Task, focusing on training and fine-tuning language models for improved reasoning capabilities.',
+    detailedDescription: React.createElement(React.Fragment, null, 
+      'This project was taken up in collaboration with ',
+      React.createElement('a', {
+        href: 'https://www.cormaccureton.com/',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        className: 'text-secondary hover:text-primary dark:hover:text-white-100 transition-colors'
+      }, 'Cormac Cureton'),
+      ' and ',
+      React.createElement('a', {
+        href: 'https://www.linkedin.com/in/amansidhu-mcgill/',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        className: 'text-secondary hover:text-primary dark:hover:text-white-100 transition-colors'
+      }, 'Aman Sidhu'),
+      ' for the COMP 579 (Reinforcement Learning) course at McGill. We implemented Group Relative Policy Optimization (GRPO) specifically for the Countdown Reasoning Task. This project implements GRPO in PyTorch and evaluates its effectiveness on the Countdown arithmetic reasoning benchmark using the Qwen2.5-1.5B-Instruct model. GRPO modifies Proximal Policy Optimization (PPO) by estimating advantages from group-level rewards, reducing dependency on value functions. Our experiments measure the performance of this GRPO algorithm, providing insights into its design choices. Our experiments show that the best GRPO fine-tuned model achieved a test mean reward of 0.18 and test mean accuracy of 10.9% with a group size of G=3, an improvement over the untrained baseline model, which achieved a mean reward of 0.122 and accuracy of 5%. These results highlight the potential of GRPO for improving LLM reasoning through more structured reinforcement learning. We release all our code to facilitate future research into scalable, efficient methods for enhancing LLM reasoning capabilities.'
+    ),
+    image: '/images/GRPOFrontPage.webp',
+    technologies: ['Python', 'PyTorch', 'Hugging Face Transformers', 'Weights & Biases', 'Jupyter Notebooks'],
+    github: 'https://github.com/Cormac-C/grpo-project',
+  },
   {
     id: 'portfolio-website',
     title: 'Portfolio Website',
@@ -55,7 +83,7 @@ The platform processes live data from multiple soccer leagues, implementing comp
     id: 'pictodocreader',
     title: 'Pictodoc Reader',
     description: 'A web application that allows users to Ctrl+F for an image in a PDF file.',
-    detailedDescription: `Due to covid, many students have become accustomed to working on their schoolwork, projects and even hackathons remotely. This led students to use online resources at their disposal in order to facilitate their workload at home. One of the tools most used is “ctrl+f” which enables a user to quickly locate any text within a document. Thus, a few of my friends and I came to a realisation that no such accurate method exists for images. This led to the birth of this project titled “PictoDocReader”.`,
+    detailedDescription: `Due to covid, many students have become accustomed to working on their schoolwork, projects and even hackathons remotely. This led students to use online resources at their disposal in order to facilitate their workload at home. One of the tools most used is "ctrl+f" which enables a user to quickly locate any text within a document. Thus, a few of my friends and I came to a realisation that no such accurate method exists for images. This led to the birth of this project titled "PictoDocReader".`,
     image: '/images/pictodocreader.png',
     technologies: ['Python', 'Dash', 'Google Cloud', 'PIL', 'Matplotlib', 'NumPy'],
     github: 'https://github.com/mattcab2002/PictoDocReader',
